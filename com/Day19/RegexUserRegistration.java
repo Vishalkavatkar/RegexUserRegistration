@@ -46,7 +46,6 @@ public class RegexUserRegistration {
         String mobileNumber = scanner.next();
         userDetails.mobileNumber(mobileNumber);
     }
-    
     /**
      * We take the input and pass it to the method to check if the password is valid
      */

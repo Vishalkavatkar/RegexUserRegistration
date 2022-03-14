@@ -85,7 +85,6 @@ public class UserDetails {
             System.out.println("Sorry!! InValid Input");
         }
     }
-    
     /**
      *Method to check the regex pattern for the password 
      *Rule - minimum 8 Characters
