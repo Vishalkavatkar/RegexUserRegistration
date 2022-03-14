@@ -68,4 +68,21 @@ public class UserDetails {
             System.out.println("InValid");
         }
     }
+    
+    /**
+     * Method to check the regex pattern for the mobile number format
+     * We are passing the mobile number to this method
+     * Then we define the regex pattern
+     * @param mobileNumber -  we have passed the mobile number to check the regex
+     */
+    public void mobileNumber(String mobileNumber) {
+        regex = "^(\\d{1,3}[- ]?){1}\\d{9,10}$";
+        Pattern pattern  = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(mobileNumber);
+        if (matcher.matches()) {
+            System.out.println("Valid Input");
+        } else {
+            System.out.println("Sorry!! InValid Input");
+        }
+    }
 }
