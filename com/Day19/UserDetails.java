@@ -33,4 +33,22 @@ public class UserDetails {
             System.out.println("Sorry!! InValid Input");
         }
     }
+    
+    /**
+     * We have created this method to check the regex pattern for the last name
+     * We are passing the last name to this method
+     * Then we define the regex pattern
+     * Last name starts with Cap and has minimum 3 characters
+     * @param lastName - Here we pass the last name of the user to check
+     */
+    public void lastName(String lastName) {
+        regex = "^[A-Z]{1}[a-z]{2,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(lastName);
+        if (matcher.matches()) {
+            System.out.println("Valid Input");
+        } else {
+            System.out.println("Sorry!! InValid Input");
+        }
+    }
 }
