@@ -51,4 +51,21 @@ public class UserDetails {
             System.out.println("Sorry!! InValid Input");
         }
     }
+    
+    /**
+     * We have created this method to check the regex pattern for the emailId
+     * We are passing the email to this method
+     * Then we define the regex pattern
+     * @param emailId - we have passed the email id to check the regex
+     */
+    public void emailId(String emailId) {
+        regex = "^[a-z0-9]+([_+-.][0-9a-z]+)*@[a-z]+.[a-z]{2,3}$";
+        Pattern pattern  = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(emailId);
+        if (matcher.matches()) {
+            System.out.println("Valid");
+        } else {
+            System.out.println("InValid");
+        }
+    }
 }
