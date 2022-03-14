@@ -85,16 +85,19 @@ public class UserDetails {
             System.out.println("Sorry!! InValid Input");
         }
     }
+    
     /**
-     *Method to check the regex pattern for the password 
+     * Method to check the regex pattern for the password 
      *Rule - minimum 8 Characters
      *Rule – Should have at least 1 Upper Case
+     *Rule – Should have at least 1 numeric number in the password
+     *Rule – Has exactly 1 Special Character
      *We are passing the mobile number to this method
      *Then we define the regex pattern
      * @param password
      */
     public void password(String password) {
-        regex = "^(?=.*[A-Z]).{8,}$";
+    	regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*#?&]{1})[A-Za-z\\d@$!%*?&]{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
         if (matcher.matches()) {
