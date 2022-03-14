@@ -1,22 +1,25 @@
 package com.Day19;
 
 import java.util.Scanner;
+
 /**
  * This is the main method where we have called the methods to compute it.
  *
  */
-
 public class RegexUserMain {
 	RegexUserRegistration regexUserRegistration = new RegexUserRegistration();
-    Scanner scanner = new Scanner(System.in);
+    TestSampleEmail testSampleEmail = new TestSampleEmail();
 
-    /**
-     * We have put a while loop then the user closes the scanner.
-     */
-    public void choice() {
+	Scanner scanner = new Scanner(System.in);
+
+	/**
+	 * We have put a while loop to iterate the options.
+	 */
+	public void choice() {
 		while (true) {
 			System.out.println(" \n1 To Check First Name\n" + "2 To Check Last Name\n" + "3 To Check EmailId\n"
-					+ "4 To Check Mobile Number\n" + "5 To Check Password\n" + "0 To Exit");
+					+ "4 To Check Mobile Number\n" + "5 To Check Password\n" + "6 To test the sample EmailIds\n"
+					+ "0 To Exit");
 			int choice = scanner.nextInt();
 			switch (choice) {
 			case 1:
@@ -34,6 +37,9 @@ public class RegexUserMain {
 			case 5:
 				regexUserRegistration.userPassword();
 				break;
+			case 6:
+				sampleEmailIds();
+				break;
 			case 0:
 				System.exit(0);
 				break;
@@ -43,6 +49,16 @@ public class RegexUserMain {
 			}
 		}
 	}
+
+	/**
+	 * Method to call the method of class test to check if email is valid or not
+	 */
+	public void sampleEmailIds() {
+			testSampleEmail.testForValidEmails();
+			testSampleEmail.testForNonValidEmails();
+		
+	}
+
 	public static void main(String[] args) {
 		System.out.println("\n Welcome to the User Registration program by Regex \n");
 		RegexUserMain regexUserMain = new RegexUserMain();

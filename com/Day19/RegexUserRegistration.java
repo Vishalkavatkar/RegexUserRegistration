@@ -28,7 +28,6 @@ public class RegexUserRegistration {
         String lastName = scanner.next();
         userDetails.lastName(lastName);
     }
-    
     /**
      * We take the input and pass it to the method to check if the emailId is valid
      */
@@ -37,7 +36,6 @@ public class RegexUserRegistration {
         String emailId = scanner.next();
         userDetails.emailId(emailId);
     }
-    
     /**
      * We take the input and pass it to the method to check if the mobile number is valid
      */
