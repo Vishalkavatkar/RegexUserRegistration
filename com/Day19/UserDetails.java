@@ -87,14 +87,15 @@ public class UserDetails {
     }
     
     /**
-     * Method to check the regex pattern for the password 
-     * Rule- minimum 8 Characters
-     * We are passing the mobile number to this method
-     * Then we define the regex pattern
+     *Method to check the regex pattern for the password 
+     *Rule - minimum 8 Characters
+     *Rule – Should have at least 1 Upper Case
+     *We are passing the mobile number to this method
+     *Then we define the regex pattern
      * @param password
      */
     public void password(String password) {
-        regex = "^[a-z]{8,}$";
+        regex = "^(?=.*[A-Z]).{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
         if (matcher.matches()) {
