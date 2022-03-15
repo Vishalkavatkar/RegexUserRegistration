@@ -13,6 +13,6 @@ public class EmotionCheck {
 		} else if (emotion.toLowerCase().contains("sad")) {
 			return "Entry Failed";
 		} else
-			return null;
+	        return null;
 	}
 }
