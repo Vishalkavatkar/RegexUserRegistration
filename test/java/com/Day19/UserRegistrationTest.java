@@ -10,87 +10,47 @@ import org.junit.Test;
  *
  */
 public class UserRegistrationTest {
-	UserRegistration junitUserRegistration = new UserRegistration();
+	UserRegistration exceptionUserRegistration = new UserRegistration();
 
 	/**
-	 * We have created this Test case to check if the first name is proper & if passes the regex pattern.
-	 * The assertTrue will check if the result is true and the it will pass the test.
+	 * In this test case we will pass the first name and use the assert method to check if the test result is true.
+	 * @throws InputInvalidException - We will throw the custom exception. 
 	 */
 	@Test
-	public void givenFirstName_IsProper_ReturnTrue() {
-		boolean actualResult = junitUserRegistration.firstName("Vishal");
-		assertTrue(actualResult);
-	
-	}
-	/**
-	 * We have created this test case to check if the test fails if we pass the wrong pattern for first name
-	 * The assertFalse will check if the result is false and the it will pass the test.
-	 */
-	@Test
-	public void givenFirstName_IsProper_ReturnFalse() {
-		boolean actualResult = junitUserRegistration.firstName("vishal");
-		assertFalse(actualResult);
-	}
+    public void firstName() throws InputInvalidException {
+        String firstName = "Vishal";
+        Assert.assertTrue(exceptionUserRegistration.testFirstName(firstName));
+    }
 
 	/**
-	 * We have created this Test case to check if the last name is proper & if passes the regex pattern.
-	 * The assertEquals will check if true or false and the output result.
+	 * In this test case we will pass the last name and use the assert method to check if the test result is true.
+	 * @throws InputInvalidException - We will throw the custom exception. 
 	 */
-	@Test
-	public void givenLastName_IsProper_ReturnTrue() {
-		boolean actualResult = junitUserRegistration.lastName("Kavatkar");
-		Assert.assertEquals(true, actualResult);
-	}
+    @Test
+    public void lastName() throws InputInvalidException {
+        String lastName = "Kavatkar";
+        Assert.assertTrue(exceptionUserRegistration.testLastName(lastName));
+    }
 
-	/**
-	 * We have created this test case to check if the test fails if we pass the wrong pattern for last name
-	 * The assertEquals will check if true or false and the output result.
+    @Test
+    public void emailId() throws InputInvalidException {
+        String emailId = "vkavatkar11@gmail.com";
+        Assert.assertTrue(exceptionUserRegistration.testEmailId(emailId));
+    }
+
+    @Test
+    public void mobileNumber() throws InputInvalidException {
+        String mobileNumber = "91 9420196236";
+        Assert.assertTrue(exceptionUserRegistration.testMobileNumber(mobileNumber));
+    }
+
+    /**
+	 * In this test case we will pass the password and use the assert method to check if the test result is true.
+	 * @throws InputInvalidException - We will throw the custom exception. 
 	 */
-	@Test
-	public void givenLastName_IsNotProper_ReturnFalse() {
-		boolean actualResult = junitUserRegistration.lastName("kavaTkar");
-		Assert.assertEquals(false, actualResult);
-	}
-
-	//Test case to check valid email
-	@Test
-	public void givenEmailId_IsProper_ReturnTrue() {
-		boolean actualResult = junitUserRegistration.emailId("vkavatkar11@gmail.com");
-		Assert.assertEquals(true, actualResult);
-	}
-
-	//Test case to check invalid email
-	@Test
-	public void givenEmailId_IsNotProper_ReturnFalse() {
-		boolean actualResult = junitUserRegistration.emailId("vishalkavatkargmail.com");
-		Assert.assertEquals(false, actualResult);
-	}
-
-	//Test case to check valid mobile number
-	@Test
-	public void givenMobileNumber_IsProper_ReturnTrue() {
-		boolean actualResult = junitUserRegistration.mobileNumber("91 9420196236");
-		Assert.assertEquals(true, actualResult);
-	}
-
-	//Test case to check invalid mobile number
-	@Test
-	public void givenMobileNumber_IsNotProper_ReturnFalse() {
-		boolean actualResult = junitUserRegistration.mobileNumber("919420196236");
-		Assert.assertEquals(false, actualResult);
-	}
-
-	//Test case to check valid password
-	@Test
-	public void givenPassword_IsProper_ReturnTrue() {
-		boolean actualResult = junitUserRegistration.password("ggfvcV@$11");
-		Assert.assertEquals(true, actualResult);
-	}
-
-	//Test case to check invalid password
-	@Test
-	public void givenPassword_IsNotProper_ReturnFalse() {
-		boolean actualResult = junitUserRegistration.password("test1234");
-		Assert.assertEquals(false, actualResult);
-	}
+    @Test
+    public void password() throws InputInvalidException{
+        String password = "asdFGH@12ds";
+        Assert.assertTrue(exceptionUserRegistration.testPassword(password));
+    }
 }
